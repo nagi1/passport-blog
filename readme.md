@@ -2,7 +2,7 @@
 
 # Laravel passport blog
 
-> A simple blog with front-end and API using passport.
+> A simple blog with front-end and API using laravel passport.
 
 <br>
 
@@ -35,7 +35,6 @@
 - [Usage](#usage)
 - [Documentation](#documentation)
   - [API](#api)
-- [demo](#demo)
 
 ---
 
@@ -469,8 +468,3 @@ request body as create
 `DELETE http://localhost:8000/api/tags/{tag_id}`
 
 **Parameter:** tag_id
-
-
-## Demo
-
-You can try the live demo : [herokuapp.com/](herokuapp.com/)
