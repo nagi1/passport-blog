@@ -64,11 +64,10 @@ git clone https://github.com/nagi1/passport-blog.git
 
 ```Bash
 composer install
-composer dump-autoload
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
-php artisan passport:keys
+php artisan passport:install // to get passport client secret
 php artisan db:seed
 #if you want dummy data
 php artisan db:seed --class=DummyDataSeeder
@@ -162,9 +161,9 @@ Fetch all posts, you can customize the result set by adding one of these paramet
 
 **?order=latest**: (default order), order results latest
 
-**?status=published**: fetch only published posts
+**?state=published**: fetch only published posts
 
-**?status=drafted**: (default) fetch published and drafted posts
+**?state=drafted**: (default) fetch published and drafted posts
 
 **?limit=10**: (default is 10) limit results to 10 results pre page, use **?page=2** to navigate to other pages.
 
@@ -254,7 +253,7 @@ request body as create
 
 ### Publish Posts (admin)
 
-`POST http://localhost:8000/api/posts/{post}/publish`
+`PUT http://localhost:8000/api/posts/{post}/publish`
 
 **This action only allowed for admin**
 

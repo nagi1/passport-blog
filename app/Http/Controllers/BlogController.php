@@ -35,7 +35,7 @@ class BlogController extends Controller
 
         $post->comments()->create([
             'body' => $request->body,
-            'user_id' => $request->user_id ? $request->user_id : auth()->guard('api')->user()->id
+            'user_id' => $request->user_id ? $request->user_id : optional(auth()->guard('api')->user())->id
         ]);
 
         //check if it's an API request
